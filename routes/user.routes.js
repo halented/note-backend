@@ -4,6 +4,9 @@ const controller = new userController
 
 router.route('/create').post(async (req, res) => {
     const newUser = await controller.createUser(req.body)
+    if (newUser.errors) {
+        return res.status(400).json('Error: ' + newUser.message)
+    }
     return res.json(newUser)
 })
 

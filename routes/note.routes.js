@@ -16,7 +16,6 @@ router.route('/create').post(async (req, res) => {
         return res.status(400).json('Error: ' + newNote.message)
     }
     return res.json(newNote)
-
 })
 
 
