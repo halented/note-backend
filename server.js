@@ -16,6 +16,7 @@ app.use(express.json())
 
 // basic routing information will go here in a bit, wanna make the schemas first
 const notesRouter = require('./routes/note.routes')
+const userRouter = require('./routes/user.routes')
 app.use('/notes', notesRouter)
 
 
