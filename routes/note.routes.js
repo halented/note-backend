@@ -18,5 +18,9 @@ router.route('/create').post(async (req, res) => {
     return res.json(newNote)
 })
 
+router.route('/notes/:user_id').get((req, res)=>{
+    // needs to pull the user_id out of the params, search the db for notes with that user_id attached to them and return em as an array
+})
+
 
 module.exports = router
