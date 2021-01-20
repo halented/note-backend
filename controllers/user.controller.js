@@ -5,8 +5,8 @@ class UserController {
         const newUser = new User(user)
 
         return newUser.save()
-            .then(user)
-            .catch(err)
+            .then(user => user)
+            .catch(err => err)
     }
 
     async login(name, email) {

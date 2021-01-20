@@ -7,7 +7,11 @@ const userSchema = new Schema({
     age: {
         type: Number,
         required: false
-    }
+    },
+    notes: [{
+        type: Schema.Types.ObjectId,
+        ref: "Note"
+    }]
 }, {
     timestamps: true
 })
