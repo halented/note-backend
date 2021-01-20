@@ -18,7 +18,7 @@ app.use(express.json())
 const notesRouter = require('./routes/note.routes')
 const userRouter = require('./routes/user.routes')
 app.use('/notes', notesRouter)
-
+app.use('/users', userRouter)
 
 // connect to DB
 const source = process.env.ATLAS_CONNECTION
