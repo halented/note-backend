@@ -7,10 +7,10 @@ class NoteController {
         const newNote = new Note(note)
 
         return newNote.save()
-            .then((note) => res.json(note))
-            .catch(err => res.status(400).json('Error: ' + err))
+            .then(note => note)
+            .catch(err => err)
     }
-};
+}
 
 
 module.exports = NoteController
