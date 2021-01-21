@@ -11,14 +11,11 @@ const userSchema = new Schema({
         required: true
     },
     age: Number,
-    notes: [{
-        type: Schema.Types.ObjectId,
-        ref: "Note"
-    }]
+    notes: [{ type: Schema.Types.ObjectId, ref: 'Note' }]
 }, {
     timestamps: true
 })
 
-const User = mong.model("User", userSchema)
+const User = mong.model('User', userSchema)
 
 module.exports = User

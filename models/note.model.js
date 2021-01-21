@@ -6,13 +6,13 @@ const noteSchema = new Schema({
     content: { type: String, required: true },
     author: {
         type: Schema.Types.ObjectId,
-        ref: "User"
+        ref: 'User'
     }
 }, {
     timestamps: true
 })
 
 // I am not 100% but i think this is where it gets migrated over to mongo on atlas
-const Note = mongoose.model("Note", noteSchema)
+const Note = mongoose.model('Note', noteSchema)
 
 module.exports = Note
