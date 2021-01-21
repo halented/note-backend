@@ -2,12 +2,15 @@ const mong = require('mongoose')
 const Schema = mong.Schema
 
 const userSchema = new Schema({
-    name: String,
-    email: String,
-    age: {
-        type: Number,
-        required: false
+    name: {
+        type: String,
+        required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
+    age: Number,
     notes: [{
         type: Schema.Types.ObjectId,
         ref: "Note"
