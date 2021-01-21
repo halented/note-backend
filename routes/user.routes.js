@@ -17,9 +17,18 @@ router.route('/login').post(async (req, res) => {
     const userData = await controller.login(name, email)
     console.log(userData);
     if (userData.length <= 0) {
-        return res.status(400).json(userData.message ||'Error: user not found')
+        return res.status(400).json('Error: user not found')
     }
     return res.json(userData)
+})
+
+router.route('/').get(async (req, res) => {
+    const allUsers = await controller.getAll()
+    // figure out what an error looks like and handle for it here, I dont think this works actually
+    if (allUsers.length <= 0) {
+        return res.status(400).json(allUsers.message || 'Server error, please try again')
+    }
+    return res.json(allUsers)
 })
 
 module.exports = router

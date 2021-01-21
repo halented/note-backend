@@ -10,6 +10,12 @@ class NoteController {
             .then(note => note)
             .catch(err => err)
     }
+
+    getAll() {
+        return Note.find()
+            .then(res => res)
+            .catch(err => err)
+    }
 }
 
 

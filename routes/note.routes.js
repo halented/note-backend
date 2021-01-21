@@ -18,8 +18,18 @@ router.route('/create').post(async (req, res) => {
     return res.json(newNote)
 })
 
+
 router.route('/notes/:user_id').get((req, res)=>{
     // needs to pull the user_id out of the params, search the db for notes with that user_id attached to them and return em as an array
+})
+
+router.route('/').get(async (req, res) => {
+    const allNotes = await controller.getAll()
+    // figure out what an error looks like and handle for it here, I dont think this works actually
+    if (allNotes.length <= 0) {
+        return res.status(400).json('Server error, please try again')
+    }
+    return res.json(allNotes)
 })
 
 

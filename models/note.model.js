@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const noteModel = new Schema({
+const noteSchema = new Schema({
     title: String,
     content: { type: String, required: true },
     user: {
         type: Schema.Types.ObjectId,
-        required: true,
         ref: "User"
     }
 }, {
@@ -14,6 +13,6 @@ const noteModel = new Schema({
 })
 
 // I am not 100% but i think this is where it gets migrated over to mongo on atlas
-const migratedNoteModel = mongoose.model("Note", noteModel)
+const Note = mongoose.model("Note", noteSchema)
 
-module.exports = migratedNoteModel
+module.exports = Note
