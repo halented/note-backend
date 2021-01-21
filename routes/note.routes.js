@@ -18,8 +18,16 @@ router.route('/create').post(async (req, res) => {
     return res.json(newNote)
 })
 
+router.route('/:note_id').get(async(req, res)=>{
+    const note = await controller.getOneWtihAuthor(req.params.note_id)
+    if(note.error){
+        return res.status(400).json('Error: ' + note.error)
+    }
+    return res.json(note)
+})
 
-router.route('/notes/:user_id').get((req, res)=>{
+
+router.route('/:user_id').get((req, res)=>{
     // needs to pull the user_id out of the params, search the db for notes with that user_id attached to them and return em as an array
 })
 

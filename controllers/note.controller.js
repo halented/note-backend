@@ -16,6 +16,16 @@ class NoteController {
             .then(res => res)
             .catch(err => err)
     }
+
+    getOneWtihAuthor(id) {
+        return Note.
+            findOne({ _id: id }).
+            populate('author')
+            .catch(err => {
+                return {error: err}
+            })
+    }
+
 }
 
 
