@@ -10,8 +10,8 @@ class UserController {
     }
 
     login(name, email) {
-        // this .populate thing does not work :((( successfully finds the user but something is missing about the relationship to the notes. tough to say. i wonder if pluralization is an issue, or my file structure. like what if it just doesn't know what to look for because i havent't required the note model or something. 
-        return User.findOne({ name, email })
+        // if you run this with just the findOne alone, it will give you the user with an array of "notes" whch just contains id's. if you run this with .populate, it will return to you the actual note objects
+        return User.findOne({ name, email }).populate('notes')
             .then(res => res)
             .catch(err => {
                 return { error: err }
