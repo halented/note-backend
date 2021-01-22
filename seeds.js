@@ -34,14 +34,6 @@ seeder.connect(source,
 
 var data = [
     {
-        'model': 'User',
-        'documents': [
-            { username: "imi", email: "imi@ymail.com", age: 100 },
-            { username: "Wisteria", email: "alabastor@wimpii.com", age: 100 },
-            { username: "elificiona", email: "rampantmarxist@gmail.com", age: 100 }
-        ]
-    },
-    {
         'model': 'Note',
         'documents': [
             { title: "Googling for Grace", content: "This doesn't happen except in books by moticational speakers", author: "600b076f0f6190c4cdf367c5" },

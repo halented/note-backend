@@ -12,21 +12,20 @@ router.route('/create').post(async (req, res) => {
 
 router.route('/login').post(async (req, res) => {
     // needs to see if it can find a username and email match from the db and return the user instance plus all associated notes if so. we will worry about pagination later
-    const { username, email } = req.body
 
-    const userData = await controller.login(username, email)
-    console.log(userData);
-    if (userData.length <= 0) {
-        return res.status(400).json('Error: user not found')
+    const userData = await controller.login(req.body)
+
+    if (userData.error) {
+        return res.status(400).json(userData.error)
     }
     return res.json(userData)
 })
 
 router.route('/').get(async (req, res) => {
     const allUsers = await controller.getAll()
-    // figure out what an error looks like and handle for it here, I dont think this works actually
-    if (allUsers.length <= 0) {
-        return res.status(400).json(allUsers.message || 'Server error, please try again')
+    
+    if (userData.error) {
+        return res.status(400).json(userData.error)
     }
     return res.json(allUsers)
 })
