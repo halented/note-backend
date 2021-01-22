@@ -11,10 +11,10 @@ router.route('/create').post(async (req, res) => {
 })
 
 router.route('/login').post(async (req, res) => {
-    // needs to see if it can find a name and email match from the db and return the user instance plus all associated notes if so. we will worry about pagination later
-    const { name, email } = req.body
+    // needs to see if it can find a username and email match from the db and return the user instance plus all associated notes if so. we will worry about pagination later
+    const { username, email } = req.body
 
-    const userData = await controller.login(name, email)
+    const userData = await controller.login(username, email)
     console.log(userData);
     if (userData.length <= 0) {
         return res.status(400).json('Error: user not found')

@@ -9,9 +9,9 @@ class UserController {
         return result
     }
 
-    login(name, email) {
+    login(username, email) {
         // if you run this with just the findOne alone, it will give you the user with an array of "notes" whch just contains id's. if you run this with .populate, it will return to you the actual note objects
-        return User.findOne({ name, email }).populate('notes')
+        return User.findOne({ username, email }).populate('notes')
             .then(res => res)
             .catch(err => {
                 return { error: err }
