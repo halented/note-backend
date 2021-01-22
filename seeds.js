@@ -1,10 +1,9 @@
 const seeder = require("mongoose-seed")
-const User = require('./models/user.model')
-const Note = require('./models/note.model')
 
 // load in atlas database key
 require('dotenv').config()
 const source = process.env.ATLAS_CONNECTION
+
 // this used to be the second arg, but mongoose seed uses a callback as a second arg...not sure where the twain shall meet
 // {
 //     useNewUrlParser: true,
@@ -17,8 +16,8 @@ seeder.connect(source,
 
         // Load Mongoose models
         seeder.loadModels([
-            User,
-            Note
+            './models/note.model.js',
+            './models/user.model.js',
         ])
 
         // Clear specified collections
