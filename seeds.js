@@ -21,7 +21,7 @@ seeder.connect(source,
         ])
 
         // Clear specified collections
-        seeder.clearModels(['Note', 'User'], function () {
+        seeder.clearModels(['Note'], function () {
 
             // Callback to populate DB once collections have been cleared
             seeder.populateModels(data, function () {
@@ -39,6 +39,16 @@ var data = [
             { username: "imi", email: "imi@ymail.com", age: 100 },
             { username: "Wisteria", email: "alabastor@wimpii.com", age: 100 },
             { username: "elificiona", email: "rampantmarxist@gmail.com", age: 100 }
+        ]
+    },
+    {
+        'model': 'Note',
+        'documents': [
+            { title: "Googling for Grace", content: "This doesn't happen except in books by moticational speakers", author: "600b076f0f6190c4cdf367c5" },
+            { title: "Warbling in Space", content: "Once upon a festering year, the young man Valiant ran awry from the lowly upbringings of his birth right. ", author: "600b076f0f6190c4cdf367c5" },
+            { title: "If That's All", content: "The time comes for us to look not without, but within, for the guidance and deliverance we desire", author: "600b076f0f6190c4cdf367c5" },
+            { title: "Wimps on Skateboards", content: "Tony Hawk is a little b-", author: "600b076f0f6190c4cdf367c5" },
+            { title: "For the Last Time", content: "When I was a child, we didn't have the opportunity to say yes the way kids do nowadays. Yes to exploration, yes to expression, yes to the glinting veneer of celebrity -- local means nothing when social media is on the scene.", author: "600b076f0f6190c4cdf367c5" }
         ]
     }
 ]
